@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_transaction"
+        android:icon="@drawable/ic_vector"
+        android:title="" />
+    <item
+        android:id="@+id/navigation_report"
+        android:icon="@drawable/ic_vector_2"
+        android:title="" />
+    <item
+        android:id="@+id/add"
+        android:title="" />
+    <item
+        android:id="@+id/navigation_plan"
+        android:icon="@drawable/ic_vector_3"
+        android:title="" />
+    <item
+        android:id="@+id/navigation_user"
+        android:icon="@drawable/ic_vector_4"
+        android:title="" />
+</menu>
