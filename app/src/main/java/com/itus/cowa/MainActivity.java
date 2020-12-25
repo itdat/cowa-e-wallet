@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         binding.navigation.setSelectedItemId(R.id.navigation_report);
         setContentView(binding.getRoot());
         loadFragment(HistoryFragment.newInstance());
+        binding.btnAdd.setOnClickListener(v -> onAddClick());
+    }
+    private void onAddClick() {
+
     }
 
     private void loadFragment(Fragment fragment) {

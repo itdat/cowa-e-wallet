@@ -1,9 +1,10 @@
-package com.itus.cowa
+package com.itus.cowa.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.itus.cowa.R
 import com.itus.cowa.databinding.BankCardItemBinding
 
 class BankCardAdapter(
@@ -25,7 +26,7 @@ class BankCardAdapter(
         return 10
     }
 
-    class BankCardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class BankCardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = BankCardItemBinding.bind(itemView)
 
         fun bind(

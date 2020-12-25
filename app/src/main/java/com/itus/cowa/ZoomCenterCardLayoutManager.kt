@@ -1,4 +1,5 @@
 package com.itus.cowa
+
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
@@ -13,7 +14,7 @@ class ZoomCenterCardLayoutManager
     : LinearLayoutManager {
 
     private var shrinkAmount = 0.15f
-    private var shrinkDistance = 0.5f
+    private var shrinkDistance = 1.5f
 
     constructor(context: Context?) : super(context)
 
@@ -21,15 +22,14 @@ class ZoomCenterCardLayoutManager
             : super(context, orientation, reverseLayout)
 
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int)
-            : super(context, attrs, defStyleAttr, defStyleRes)
-    {
+            : super(context, attrs, defStyleAttr, defStyleRes) {
         context.obtainStyledAttributes(attrs, R.styleable.RecyclerView,
                 defStyleAttr, defStyleRes).apply {
 
             try {
                 shrinkAmount = getFloat(R.styleable.RecyclerView_shrinkAmount, shrinkAmount)
                 shrinkDistance = getFloat(R.styleable.RecyclerView_shrinkDistance, shrinkDistance)
-            }finally {
+            } finally {
                 recycle()
             }
         }
@@ -38,7 +38,8 @@ class ZoomCenterCardLayoutManager
     override fun scrollHorizontallyBy(
             dx: Int,
             recycler: RecyclerView.Recycler?,
-            state: RecyclerView.State?): Int {
+            state: RecyclerView.State?,
+    ): Int {
         if (orientation == VERTICAL)
             return 0
 
@@ -93,9 +94,9 @@ class ZoomCenterCardLayoutManager
     override fun onLayoutChildren(recycler: RecyclerView.Recycler?, state: RecyclerView.State?) {
         super.onLayoutChildren(recycler, state)
 
-        if (orientation == HORIZONTAL){
+        if (orientation == HORIZONTAL) {
             scrollHorizontallyBy(0, recycler, state)
-        }else if (orientation == VERTICAL){
+        } else if (orientation == VERTICAL) {
             scrollVerticallyBy(0, recycler, state)
         }
     }
