@@ -5,8 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
+import androidx.recyclerview.widget.LinearSnapHelper
 import com.itus.cowa.databinding.FragmentHistoryBinding
 
 class HistoryFragment : Fragment(), OnCardClickListener {
@@ -18,6 +17,8 @@ class HistoryFragment : Fragment(), OnCardClickListener {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentHistoryBinding.bind(view)
         binding.recyclerView.adapter = BankCardAdapter(this)
+        val snapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(binding.recyclerView)
     }
 
     override fun onCreateView(
