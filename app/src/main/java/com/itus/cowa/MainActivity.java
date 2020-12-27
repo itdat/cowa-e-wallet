@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btnAdd.setOnClickListener(v -> onAddClick());
     }
     private void onAddClick() {
-
+        startActivity(new Intent(this, TransactionActivity.class));
     }
 
     private void loadFragment(Fragment fragment) {
