@@ -34,10 +34,10 @@
         app:layout_constraintTop_toBottomOf="@+id/imgLogin" />
 
     <LinearLayout
-        android:background="@drawable/background_login_form"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
+        android:background="@drawable/background_login_form"
         android:orientation="vertical"
         android:paddingStart="24dp"
         android:paddingTop="18dp"
@@ -67,12 +67,12 @@
             android:text="Tài khoản" />
 
         <EditText
-            android:text="ntdat"
             android:id="@+id/edtUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:text="ntdat" />
 
         <TextView
             android:id="@+id/txtPassword"
@@ -82,18 +82,20 @@
             android:text="Mật khẩu" />
 
         <EditText
-            android:text="1234567"
             android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:text="1234567" />
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
             android:layout_marginTop="12dp"
+            android:background="@drawable/border_login"
             android:text="Đăng nhập" />
 
         <TextView

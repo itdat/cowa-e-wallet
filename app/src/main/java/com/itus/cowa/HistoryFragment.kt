@@ -1,5 +1,6 @@
 package com.itus.cowa
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,6 +50,6 @@ class HistoryFragment : Fragment(), OnCardClickListener {
     }
 
     override fun onCardClick(position: Int) {
-
+        startActivity(Intent(activity, TransactionActivity::class.java))
     }
 }
