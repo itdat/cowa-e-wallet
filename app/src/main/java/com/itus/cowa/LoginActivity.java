@@ -1,15 +1,18 @@
 package com.itus.cowa;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
     private Button btnLogin;
+    private TextView useFaceDetection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +26,19 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplication(), MainActivity.class));
             }
         });
+
+        useFaceDetection = findViewById(R.id.useFaceDetection);
+        useFaceDetection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showEditDialog();
+            }
+        });
+    }
+
+    private void showEditDialog() {
+        FragmentManager fm = getSupportFragmentManager();
+        FaceDetectionFragment fragment = FaceDetectionFragment.newInstance("Nhận dạng khuôn mặt");
+        fragment.show(fm, "fragment_edit_name");
     }
 }
