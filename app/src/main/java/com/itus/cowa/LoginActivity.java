@@ -31,14 +31,14 @@ public class LoginActivity extends AppCompatActivity {
         useFaceDetection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showEditDialog();
+                showFaceDetectionDialog();
             }
         });
     }
 
-    private void showEditDialog() {
+    private void showFaceDetectionDialog() {
         FragmentManager fm = getSupportFragmentManager();
         FaceDetectionFragment fragment = FaceDetectionFragment.newInstance("Nhận dạng khuôn mặt");
-        fragment.show(fm, "fragment_edit_name");
+        fragment.show(fm, "fragment_face_detection");
     }
 }

@@ -1,6 +1,7 @@
 package com.itus.cowa;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 import android.view.View;
@@ -30,8 +31,10 @@ public class TransactionActivity extends AppCompatActivity {
         btnTransfer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FragmentManager fm = getSupportFragmentManager();
+                FaceDetectionFragment fragment = FaceDetectionFragment.newInstance("Nhận dạng khuôn mặt");
+                fragment.show(fm, "fragment_face_detection");
                 Toast.makeText(getApplicationContext(), "Chuyển tiền thành công", Toast.LENGTH_LONG);
-                finish();
             }
         });
     }
