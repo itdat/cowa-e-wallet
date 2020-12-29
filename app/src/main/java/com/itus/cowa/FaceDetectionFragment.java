@@ -65,6 +65,7 @@ public class FaceDetectionFragment extends DialogFragment {
                     public void onTick(long millisUntilFinished) {
                     }
                     public void onFinish() {
+                        dismiss();
                         startActivity(new Intent(getContext(), MainActivity.class));
                     }
                 }.start();
