@@ -1,6 +1,9 @@
 package com.itus.cowa;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -32,7 +35,10 @@ public class MainActivity extends AppCompatActivity {
         binding.btnAdd.setOnClickListener(v -> onAddClick());
     }
     private void onAddClick() {
-        startActivity(new Intent(this, TransactionActivity.class));
+        ConstraintLayout itemCard = findViewById(R.id.item_card);
+        Intent intent = new Intent(this, TransactionActivity.class);
+        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this, itemCard, ViewCompat.getTransitionName(itemCard));
+        startActivity(intent, optionsCompat.toBundle());
     }
 
     private void loadFragment(Fragment fragment) {
