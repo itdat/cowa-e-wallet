@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_theme"
@@ -147,13 +150,14 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border_login"
             android:layout_marginTop="20dp"
+            android:textColor="@color/white"
             android:text="Chuyển ngay" />
     </LinearLayout>
 
     <ImageButton
         android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="35dp"
+        android:layout_height="33dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:background="#00FFFFFF"
@@ -162,3 +166,4 @@
         app:srcCompat="@drawable/abc_vector_test" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
